@@ -28,8 +28,9 @@ const Ingredient = () => {
                     {
                         ings.map(el =>
                             <Link to={`/meal/${el.strMeal}`}>
-                                <img className='img-ing' src={el.strMealThumb} alt=""/>
                                 <div>{el.strMeal}</div>
+                                <img className='img-ing' src={el.strMealThumb} alt=""/>
+
                             </Link>
                         )
                     }

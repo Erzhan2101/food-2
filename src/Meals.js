@@ -21,6 +21,7 @@ const Meals = () => {
         if(search.trim()){
             history.push(`browse/${search}`)
         }
+        
     }
 
     return (
