@@ -22,7 +22,9 @@ const Food = () => {
 
 
     return (
+
         <div className='food'>
+            <button to={`/meal/${food.steMeal}`}>Back</button>
             <img src={food.strMealThumb}/>
             <h3>{food.strMeal}</h3>
             {
