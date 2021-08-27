@@ -11,7 +11,7 @@ const Browse = () => {
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.search}`)
             .then(({data}) => setSearchMeal(data.meals))
-    }, [])
+    }, [params.search])
 
     return (
         <div>

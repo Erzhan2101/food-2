@@ -18,7 +18,7 @@ const Food = () => {
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.id}`)
             .then(({data}) => setFood(data.meals[0]))
-    }, [])
+    }, [params.id])
 
 
     return (
