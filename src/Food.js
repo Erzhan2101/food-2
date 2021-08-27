@@ -6,6 +6,14 @@ const Food = () => {
     const params = useParams()
     const [food, setFood] = useState({})
 
+    const strIngredients = Array(20).fill(0).reduce((acc, item, idx) => {
+        if (food[`strIngredient${idx + 1}`]) {
+            return [...acc, food[`strIngredient${idx + 1}`]]
+        }
+        return acc
+    }, [])
+
+    console.log(strIngredients)
 
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.id}`)
@@ -13,12 +21,19 @@ const Food = () => {
     }, [])
 
 
-
     return (
-   <div className='food'>
-       <img src={food.strMealThumb}/>
-       <h3>{food.strMeal}</h3>
-   </div>
+        <div className='food'>
+            <img src={food.strMealThumb}/>
+            <h3>{food.strMeal}</h3>
+            {
+                strIngredients.map(el => (
+                    <div>
+                        <img src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
+                        <div>{el}</div>
+                    </div>
+                ))
+            }
+        </div>
     );
 };
 

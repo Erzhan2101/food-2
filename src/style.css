@@ -6,7 +6,6 @@ img{
 a{
     text-decoration: none;
     color: brown;
-    font-size: 20px;
 }
 
 .meals{
@@ -18,5 +17,11 @@ a{
 .food{
     text-align: center;
     margin-top: 40px;
+
+
+}
+
+.search{
+    text-align: center;
 }
 
