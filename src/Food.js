@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 import {useEffect, useState} from "react";
 import axios from "axios";
 
@@ -24,7 +24,7 @@ const Food = () => {
     return (
 
         <div className='food'>
-            <button to={`/meal/${food.steMeal}`}>Back</button>
+            <Link className="back" to={`/`}>Back</Link>
             <img src={food.strMealThumb}/>
             <h3>{food.strMeal}</h3>
             {

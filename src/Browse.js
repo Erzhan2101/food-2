@@ -15,17 +15,19 @@ const Browse = () => {
 
     return (
         <div>
-            <button>Back</button>
-            {
-                searchMeal.map(item =>
-                    <div key={item.idMeal}>
-                        <Link to={`/meal/${item.strMeal}`}>
-                            <img src={item.strMealThumb} alt=""/>
-                            <p>{item.strMeal}</p>
-                        </Link>
-                    </div>
-                )
-            }
+            <Link className="back" to={`/`}>Back</Link>
+            <div>
+                {
+                    searchMeal.map(item =>
+                        <div key={item.idMeal}>
+                            <Link to={`/meal/${item.strMeal}`}>
+                                <img src={item.strMealThumb} alt=""/>
+                                <p>{item.strMeal}</p>
+                            </Link>
+                        </div>
+                    )
+                }
+            </div>
         </div>
     );
 };
