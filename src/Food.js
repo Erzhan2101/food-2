@@ -25,7 +25,7 @@ const Food = () => {
 <div>
     <Link className="back" to={`/`}>Back</Link>
     <div className='food'>
-        <img src={food.strMealThumb}/>
+        <img src={food.strMealThumb} alt=""/>
         <h3>{food.strMeal}</h3>
         {
             strIngredients.map(el => (
