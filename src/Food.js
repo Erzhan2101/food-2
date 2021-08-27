@@ -22,20 +22,22 @@ const Food = () => {
 
 
     return (
+<div>
+    <Link className="back" to={`/`}>Back</Link>
+    <div className='food'>
+        <img src={food.strMealThumb}/>
+        <h3>{food.strMeal}</h3>
+        {
+            strIngredients.map(el => (
+                <div>
+                    <img src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
+                    <div>{el}</div>
+                </div>
+            ))
+        }
+    </div>
+</div>
 
-        <div className='food'>
-            <Link className="back" to={`/`}>Back</Link>
-            <img src={food.strMealThumb}/>
-            <h3>{food.strMeal}</h3>
-            {
-                strIngredients.map(el => (
-                    <div>
-                        <img src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
-                        <div>{el}</div>
-                    </div>
-                ))
-            }
-        </div>
     );
 };
 

@@ -16,7 +16,7 @@ const Browse = () => {
     return (
         <div>
             <Link className="back" to={`/`}>Back</Link>
-            <div>
+            <div className='meals'>
                 {
                     searchMeal.map(item =>
                         <div key={item.idMeal}>

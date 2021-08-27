@@ -29,3 +29,10 @@ a{
     color: black;
     font-size: 32px;
 }
+
+.search-btn{
+    color: black;
+    margin-right: 10px;
+    border: 1px solid black;
+    padding: 1px;
+}

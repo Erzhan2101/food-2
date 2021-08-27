@@ -20,7 +20,7 @@ const Meals = () => {
 
         <div className='search'>
             <input onChange={searchInput} type='text'/>
-            <Link to={`browse/${search}`}>Search...</Link>
+            <Link className='search-btn' to={`browse/${search}`}>Search...</Link>
             <div className='meals'>
                 {
                     meals.map(el => (
