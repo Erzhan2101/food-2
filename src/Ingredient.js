@@ -9,7 +9,7 @@ const Ingredient = () => {
     const history = useHistory();
 
 
-    useEffect(() =>{
+    useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${params.ing}`)
             .then(({data}) => setIngs(data.meals))
     }, [params.ing])
@@ -18,14 +18,23 @@ const Ingredient = () => {
     return (
         <div>
             <button className="back" onClick={() => history.goBack()}>Back</button>
-
-            {
-                ings.map(el =>
-                    <Link to={`/meal/${el.strMeal}`}>
-                        <img className='img-ing' src={el.strMealThumb} alt=""/>
-                    </Link>
-                )
-            }
+            <div className='ing-grid'>
+                <div>
+                    <img className="ingImg" src={`https://www.themealdb.com/images/ingredients/${params.ing}.png`}
+                         alt=""/>
+                    <div className='ing-title'>{params.ing}</div>
+                </div>
+                <div className='ing-meal'>
+                    {
+                        ings.map(el =>
+                            <Link to={`/meal/${el.strMeal}`}>
+                                <img className='img-ing' src={el.strMealThumb} alt=""/>
+                                <div>{el.strMeal}</div>
+                            </Link>
+                        )
+                    }
+                </div>
+            </div>
         </div>
     );
 };

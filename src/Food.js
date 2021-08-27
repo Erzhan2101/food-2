@@ -30,10 +30,10 @@ const Food = () => {
            <img className='img-food' src={food.strMealThumb} alt=""/>
            <h3 className='title-food'>{food.strMeal}</h3>
        </div>
-        <div>
+        <div className='strIngredient'>
             {
                 strIngredients.map(el => (
-                    <div  className='strIngredient'>
+                    <div  >
                         <Link to={`/ingredients/${el}`}>
                             <img className='strIngredient-img' src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
                             <div>{el}</div>

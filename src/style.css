@@ -55,6 +55,15 @@ a {
     color: brown;
     border: 2px solid #b4b4b4;
     padding: 5px;
+    transition: .4s;
+}
+
+.search-btn:hover{
+    background-color: whitesmoke;
+    color: brown;
+    border: 2px solid brown;
+
+
 }
 
 .search-input {
@@ -90,6 +99,11 @@ a {
     height: 70px;
 }
 
+.strIngredient{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .img-brow{
     border-radius: 100px 5px 100px 5px;
     width: 400px;
@@ -106,12 +120,38 @@ a {
 }
 
 .img-ing{
-    border-radius: 100px 5px 100px 5px;
-    width: 400px;
-    height: 350px;
+    border-radius: 15px ;
+    width: 100px;
+    height: 95px;
 }
 
 .meals-ing{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
+
+.ing-meal{
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+
+.ing-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.ing-title{
+    text-align: center;
+    color: whitesmoke;
+    font-size: 22px;
+}
+
+.ingImg{
+    border-radius: 100px 5px 100px 5px;
+    width: 400px;
+    height: 350px;
+}
+
