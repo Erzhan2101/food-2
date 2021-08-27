@@ -1,10 +1,11 @@
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from "axios";
 
 const Meals = () => {
     const [meals, setMeals] = useState([])
     const [search, setSearch] = useState('')
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -16,18 +17,24 @@ const Meals = () => {
         setSearch(e.target.value)
     }
 
+    const btnSearch = () =>{
+        if(search.trim()){
+            history.push(`browse/${search}`)
+        }
+    }
+
     return (
 
         <div className='search'>
-            <input onChange={searchInput} type='text'/>
-            <Link className='search-btn' to={`browse/${search}`}>Search...</Link>
+            <input className='search-input' onChange={searchInput} type='text' placeholder='Enter text'/>
+            <button className='search-btn' onClick={btnSearch}>Search...</button>
             <div className='meals'>
                 {
                     meals.map(el => (
                         <div key={el.idMeal}>
                             <Link to={`/meal/${el.strMeal}`}>
-                                <div>{el.strMeal}</div>
-                                <img src={el.strMealThumb} alt=''/>
+                                <h3 className='title-meals'>{el.strMeal}</h3>
+                                <img className='img-meals' src={el.strMealThumb} alt=''/>
                             </Link>
                         </div>
                     ))

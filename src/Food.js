@@ -1,10 +1,11 @@
-import {Link, useParams} from "react-router-dom"
+import {Link, useParams,useHistory} from "react-router-dom"
 import {useEffect, useState} from "react";
 import axios from "axios";
 
 const Food = () => {
     const params = useParams()
     const [food, setFood] = useState({})
+    const history = useHistory();
 
     const strIngredients = Array(20).fill(0).reduce((acc, item, idx) => {
         if (food[`strIngredient${idx + 1}`]) {
@@ -23,18 +24,24 @@ const Food = () => {
 
     return (
 <div>
-    <Link className="back" to={`/`}>Back</Link>
+    <button className="back" onClick={() => history.goBack()}>Back</button>
     <div className='food'>
-        <img src={food.strMealThumb} alt=""/>
-        <h3>{food.strMeal}</h3>
-        {
-            strIngredients.map(el => (
-                <div>
-                    <img src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
-                    <div>{el}</div>
-                </div>
-            ))
-        }
+       <div>
+           <img className='img-food' src={food.strMealThumb} alt=""/>
+           <h3 className='title-food'>{food.strMeal}</h3>
+       </div>
+        <div>
+            {
+                strIngredients.map(el => (
+                    <div  className='strIngredient'>
+                        <Link to={`/ingredients/${el}`}>
+                            <img className='strIngredient-img' src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
+                            <div>{el}</div>
+                        </Link>
+                    </div>
+                ))
+            }
+        </div>
     </div>
 </div>
 
