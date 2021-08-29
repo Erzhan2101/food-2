@@ -2,7 +2,7 @@ import {Link, useParams, useHistory} from "react-router-dom"
 import {useEffect, useState} from "react";
 import axios from "axios";
 
-const Food = () => {
+const MealDetails = () => {
     const params = useParams()
     const [food, setFood] = useState({})
     const history = useHistory();
@@ -59,4 +59,4 @@ const Food = () => {
     );
 };
 
-export default Food;
+export default MealDetails;
