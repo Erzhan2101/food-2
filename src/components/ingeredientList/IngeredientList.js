@@ -1,9 +1,19 @@
-import React from 'react';
+import {Link} from "react-router-dom";
 
-const IngeredientList = () => {
+const IngeredientList = ({strIngredients}) => {
     return (
-        <div>
-            
+        <div className='strIngredient'>
+            {
+                strIngredients.map(el =>
+                    <div>
+
+                        <Link to={`/ingredients/${el}`}>
+                            <img key={el.id} className='strIngredient-img' src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
+                            <div>{el}</div>
+                        </Link>
+                    </div>
+                )
+            }
         </div>
     );
 };

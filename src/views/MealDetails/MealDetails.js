@@ -1,6 +1,8 @@
-import {Link, useParams, useHistory} from "react-router-dom"
+import {useParams, useHistory} from "react-router-dom"
 import {useEffect, useState} from "react";
 import axios from "axios";
+import IngeredientList from "../../components/ingeredientList/IngeredientList";
+import YoutubeVideo from "../../components/YoutubeVideo/YoutubeVideo";
 
 const MealDetails = () => {
     const {id} = useParams()
@@ -9,7 +11,7 @@ const MealDetails = () => {
     const [youtubeCode, setYoutubeCode] = useState("")
 
     const strIngredients = Array(20).fill(0).reduce((acc, item, idx) => {
-        const Ingredient = youtubeCode[`strIngredient${idx + 1}`]
+        const Ingredient = meal[`strIngredient${idx + 1}`]
         return Ingredient ? [...acc, Ingredient] : acc
     }, [])
 
@@ -30,25 +32,9 @@ const MealDetails = () => {
                 <div>
                     <img className='img-food' src={meal.strMealThumb} alt=""/>
                     <h3 className='title-food'>{meal.strMeal}</h3>
-                    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${youtubeCode}`}
-                            title="YouTube video player" frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen>
-                    </iframe>
+                    <YoutubeVideo youtubeCode={youtubeCode} />
                 </div>
-                <div className='strIngredient'>
-                    {
-                        strIngredients.map(el => (
-                            <div>
-                                <Link to={`/ingredients/${el}`}>
-                                    <img key={el.id} className='strIngredient-img'
-                                         src={`https://www.themealdb.com/images/ingredients/${el}.png`} alt=""/>
-                                    <div>{el}</div>
-                                </Link>
-                            </div>
-                        ))
-                    }
-                </div>
+                <IngeredientList strIngredients={strIngredients}/>
             </div>
         </div>
     );

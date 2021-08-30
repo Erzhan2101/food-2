@@ -5,15 +5,15 @@ import axios from "axios";
 
 const Browse = () => {
 
-    const params = useParams()
+    const {search} = useParams()
     const [Meals, setMeals] = useState([])
     const history = useHistory();
 
 
     useEffect(() => {
-        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${params.search}`)
+        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
             .then(({data}) => setMeals(data.meals))
-    }, [params.search])
+    }, [search])
 
     return (
         <div>
