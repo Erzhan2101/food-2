@@ -30,7 +30,6 @@ const Ingredient = () => {
                             <Link to={`/meal/${el.strMeal}`}>
                                 <div>{el.strMeal}</div>
                                 <img className='img-ing' src={el.strMealThumb} alt=""/>
-
                             </Link>
                         )
                     }

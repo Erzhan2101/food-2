@@ -70,6 +70,13 @@ a {
     border-radius: 10px 3px 10px 3px;
     padding: 5px;
     margin: 30px 10px 30px 0;
+    transition: .4s;
+}
+
+.search-input:hover{
+
+    border: 2px solid brown;
+
 }
 
 .img-meals {
