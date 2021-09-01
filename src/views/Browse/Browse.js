@@ -9,22 +9,24 @@ const Browse = () => {
 
     const {search} = useParams()
     const [meals, setMeals] = useState([])
-
+    const [error, setError] = useState(false)
     useEffect(() => {
         async function Search(){
             const {data: {meals}} = await axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-            setMeals(meals)
+            meals ? setMeals(meals) : setError(true)
         }
            Search()
     }, [search])
+
+
 
     return (
         <div>
             <BtnBack/>
             <div>
                 <h2 className="brow-title">Search by request</h2>
+                {error? <h2 className="error-search">DISH NOT FOUND</h2> : <BrowseSearch meals={meals}/>}
             </div>
-            <BrowseSearch meals={meals}/>
         </div>
     );
 };
