@@ -11,8 +11,11 @@ const Browse = () => {
     const [meals, setMeals] = useState([])
 
     useEffect(() => {
-        axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
-            .then(({data}) => setMeals(data.meals))
+        async function Search(){
+            const {data: {meals}} = await axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
+            setMeals(meals)
+        }
+           Search()
     }, [search])
 
     return (

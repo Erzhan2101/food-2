@@ -10,8 +10,11 @@ const Ingredient = () => {
     const [ings, setIngs] = useState([])
 
     useEffect(() => {
-        axios(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ing}`)
-            .then(({data}) => setIngs(data.meals))
+        async function Ings() {
+            const {data: {meals}} = await axios(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ing}`)
+            setIngs(meals)
+        }
+            Ings()
     }, [ing])
 
 
