@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lobster&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -14,12 +16,40 @@ a {
     font-size: 19px;
 }
 
+.header {
+    background-color: #b4b4b4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo {
+    height: 80px;
+    width: 180px;
+}
+
 .meals {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
     grid-gap: 20px;
     margin-top: 30px;
+}
+
+.header-title {
+    margin-left: 160px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.header-home {
+    font-family: 'Lobster', cursive;
+    margin-right: 10px;
+    transition: .4s;
+}
+
+.header-home:hover{
+    color: brown;
 }
 
 .food {
@@ -56,9 +86,10 @@ a {
     border: 2px solid #b4b4b4;
     padding: 5px;
     transition: .4s;
+    font-family: 'Lobster', cursive;
 }
 
-.search-btn:hover{
+.search-btn:hover {
     background-color: #ffffff;
     color: brown;
     border: 2px solid brown;
@@ -71,22 +102,39 @@ a {
     padding: 5px;
     margin: 30px 10px 30px 0;
     transition: .4s;
+    font-family: 'Lobster', cursive;
 }
 
-.search-input:hover{
-
+.search-input:hover {
     border: 2px solid brown;
+}
 
+.search-box {
+    margin-right: 40px;
 }
 
 .img-meals {
     border-radius: 100px 5px 100px 5px;
     width: 400px;
     height: 350px;
+    box-shadow: -1px -1px 11px 5px  #572e2e;
+    transition: .4s;
+}
+
+.img-meals:hover{
+    width: 370px;
+    height: 330px;
 }
 
 .title-meals {
-    color: whitesmoke;
+    margin-bottom: 10px;
+    color: #242121;
+    font-family: 'Lobster', cursive;
+}
+
+.t-ing {
+    color: #242121;
+    font-family: 'Lobster', cursive;
 }
 
 .img-food {
@@ -95,68 +143,76 @@ a {
     height: 350px;
 }
 
-.title-food{
-    color: whitesmoke;
+.meals-box{
+    box-shadow: -1px 1px 11px -1px #572e2e;
+}
+
+.title-food {
+    color: #710808;
+    font-family: 'Lobster', cursive;
     margin-bottom: 20px;
 }
-.strIngredient-img{
+
+.strIngredient-img {
     width: 170px;
     height: 120px;
 }
 
-.strIngredient{
+.strIngredient {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.img-brow{
+.img-brow {
     border-radius: 100px 5px 100px 5px;
     width: 400px;
     height: 350px;
 }
 
-.sub-title-brow{
+.sub-title-brow {
     color: whitesmoke;
+    font-family: 'Lobster', cursive;
 }
 
-.brow-title{
+.brow-title {
     color: #840000;
     text-align: center;
+    font-family: 'Dancing Script', cursive;
 }
 
-.img-ing{
-    border-radius: 15px ;
+.img-ing {
+    border-radius: 15px;
     width: 100px;
     height: 95px;
 }
 
-.meals-ing{
+.meals-ing {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.ing-meal{
+.ing-meal {
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
 
 }
 
-.ing-grid{
+.ing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
-    margin-top: 40px ;
+    margin-top: 40px;
 
 }
 
-.ing-title{
+.ing-title {
     text-align: center;
     color: whitesmoke;
     font-size: 22px;
 }
 
-.ingImg{
+.ingImg {
     border-radius: 100px 5px 100px 5px;
     width: 400px;
     height: 350px;

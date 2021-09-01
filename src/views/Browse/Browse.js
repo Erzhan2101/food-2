@@ -1,14 +1,14 @@
 import {useEffect, useState} from 'react';
-import {Link, useHistory, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
+import BtnBack from "../../components/Btn-Back/BtnBack";
 
 import axios from "axios";
+import BrowseSearch from "../../components/BrowseSearch/BrowseSearch";
 
 const Browse = () => {
 
     const {search} = useParams()
-    const [Meals, setMeals] = useState([])
-    const history = useHistory();
-
+    const [meals, setMeals] = useState([])
 
     useEffect(() => {
         axios(`https://www.themealdb.com/api/json/v1/1/search.php?s=${search}`)
@@ -17,22 +17,11 @@ const Browse = () => {
 
     return (
         <div>
-            <button className="back" onClick={() => history.goBack()}>Back</button>
+            <BtnBack/>
             <div>
                 <h2 className="brow-title">Search by request</h2>
             </div>
-            <div className='meals'>
-                {
-                    Meals.map(item =>
-                        <div key={item.idMeal}>
-                            <Link to={`/meal/${item.strMeal}`}>
-                                <img className='img-brow' src={item.strMealThumb} alt=""/>
-                                <h3 className="sub-title-brow" >{item.strMeal}</h3>
-                            </Link>
-                        </div>
-                    )
-                }
-            </div>
+            <BrowseSearch meals={meals}/>
         </div>
     );
 };
