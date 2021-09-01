@@ -19,9 +19,7 @@ const Header = () => {
     return (
         <div className='header'>
             <Link to={`/`}>
-                <img className='logo'
-                     src="https://o.remove.bg/downloads/810aa008-1d1f-4fe5-8dbe-43162d963234/images-removebg-preview.png"
-                     alt=''/>
+                <img className='logo' src="https://o.remove.bg/downloads/810aa008-1d1f-4fe5-8dbe-43162d963234/images-removebg-preview.png" alt=''/>
             </Link>
             <div>
                 <h1 className='header-title'>My own chef</h1>
