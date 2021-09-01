@@ -68,6 +68,12 @@ a {
 
 }
 
+.ing-list{
+    color: #840000;
+    font-family: 'Lobster', cursive;
+
+}
+
 .search {
     text-align: center;
 }
@@ -172,10 +178,18 @@ a {
 }
 
 .img-brow {
+    box-shadow: 0 5px 11px 5px #572e2e;
     border-radius: 100px 5px 100px 5px;
     width: 400px;
     height: 350px;
+    transition: .4s;
 }
+
+.img-brow:hover{
+    width: 370px;
+    height: 330px;
+}
+
 
 .sub-title-brow {
     color: whitesmoke;
@@ -215,6 +229,7 @@ a {
 }
 
 .ing-title {
+    font-family: 'Lobster', cursive;
     text-align: center;
     color: whitesmoke;
     font-size: 22px;

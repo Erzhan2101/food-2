@@ -6,7 +6,7 @@ const CompositionIngList = ({ings}) => {
             {
                 ings.map(el =>
                     <Link to={`/meal/${el.strMeal}`}>
-                        <div>{el.strMeal}</div>
+                        <div className="ing-list">{el.strMeal}</div>
                         <img className='img-ing' src={el.strMealThumb} alt=""/>
                     </Link>
                 )
