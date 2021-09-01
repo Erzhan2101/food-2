@@ -1,5 +1,6 @@
 import {Link, useHistory} from "react-router-dom";
 import {useState} from "react";
+// import logo from '../img/food-logo.png'
 
 const Header = () => {
 
@@ -18,9 +19,9 @@ const Header = () => {
 
     return (
         <div className='header'>
-            <Link to={`/`}>
-                <img className='logo' src="https://o.remove.bg/downloads/cd785f18-c7b6-490c-b68f-25710a15130e/food-spoon-fork-vector-symbol-graphic-logo-design-template-food-spoon-fork-symbol-logo-design-121549456-removebg-preview.png" alt=''/>
-            </Link>
+            {/*<Link to={`/`}>*/}
+                {/*<img className='logo' src={logo} alt=''/>*/}
+            {/*</Link>*/}
             <div>
                 <h1 className='header-title'>My own chef</h1>
             </div>
